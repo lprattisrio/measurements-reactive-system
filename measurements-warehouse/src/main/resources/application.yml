@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: measurements-warehouse
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_BROKERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: ${spring.application.name}
+
+logging:
+  level:
+    com.exercise.reactive.warehouse: ${LOG_LEVEL:DEBUG}

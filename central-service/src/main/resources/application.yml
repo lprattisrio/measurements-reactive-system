@@ -1,0 +1,18 @@
+server:
+  port: 18082
+
+spring:
+  application:
+    name: central-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_BROKERS:localhost:9092}
+    consumer:
+      group-id: ${spring.application.name}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+alerts:
+  thresholds:
+    temperature: ${THRESHOLD_TEMPERATURE:35}
+    humidity: ${THRESHOLD_HUMIDITY:50}
