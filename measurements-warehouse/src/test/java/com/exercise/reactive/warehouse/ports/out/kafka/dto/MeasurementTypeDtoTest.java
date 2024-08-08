@@ -1,7 +1,5 @@
 package com.exercise.reactive.warehouse.ports.out.kafka.dto;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.exercise.reactive.warehouse.domain.MeasurementType;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -9,6 +7,9 @@ import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class MeasurementTypeDtoTest {
 
